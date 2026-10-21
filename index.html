@@ -329,6 +329,10 @@ circle.lead{fill:var(--ink)}
 .compact .cap-t{font-size:15px;min-height:2.5em}.compact .nav .ghost{width:34px}
 @media (max-width:760px){.brand span,.ep{display:none}.hud{padding:10px 16px 6px}.dock{padding:10px 16px 12px;gap:8px 12px}.cap-t{min-height:5em;font-size:16.5px}.playb{width:44px;height:44px}.nav .ghost{width:36px}}
 @media (prefers-reduced-motion:reduce){.new,.art.look .gaze i,.art.look .gaze polyline,.deving .scan{animation:none!important}.art.look .gaze i{opacity:1}}
+/* Sofia Sans draws Bulgarian-style lowercase by default (д like g, т like m, п like n).
+   Its Russian localisation has the standard shapes Ukrainian uses; the page stays lang="uk".
+   Set on every element: the `font` shorthand in patch.css resets this property. */
+*,*::before,*::after{font-language-override:"RUS" !important}
 </style>
 </head>
 <body>
@@ -419,8 +423,8 @@ circle.lead{fill:var(--ink)}
         </div>
         <div class="lab on" data-id="m4l" style="left:966px;top:400px"><b>Спроба 1 · 16:29</b><br>Ворота, конвеєр<br>Відхилено</div>
         <div class="slip hum rt" data-id="s5" style="left:594px;top:420px;width:250px;height:100px"><span class="t">Виправлення · людина</span><p>Незрозуміло, для чого цей пристрій.</p><small>Почати зі знайомої конструкції і змінити в ній одну дію.</small></div>
-        <div class="slip mem" data-id="s0" style="left:490px;top:220px;width:280px;height:148px"><span class="t">З пам’яті · лише порада</span><p>Уроки попередніх зображень</p>
-          <ul><li>Одна фізична дія на зображення.</li><li>Машині зображення може здаватися зрозумілішим, ніж людям.</li><li>Текст може назвати подію, але не створює задуму.</li></ul></div>
+        <div class="slip mem" data-id="s0" style="left:490px;top:220px;width:280px;height:148px"><span class="t">З пам’яті · лише порада</span><p>Що пам’ять підказала того дня</p>
+          <ul><li>Попередня робота про Конго не зчиталась: зв’язку не видно.</li><li>З роботи про воду: знайомий предмет, одна неможлива дія.</li><li>Зв’язок має бути видно без заголовка.</li></ul></div>
 
         <!-- bottom lane: back -->
         <div class="obj" data-o="o6" style="left:1502px;top:686px"><b>Візуальний критик</b><span>спершу читає пікселі</span>
@@ -588,6 +592,7 @@ circle.lead{fill:var(--ink)}
       <li>Знімок сенсорів збережено о 22:02 того ж дня. Сеута була однією з п’яти актуальних тем, над якими VIGIL працював того дня; робота спирається на два повідомлення AP. В окремому читанні сенсорів першим вибором був звіт ВООЗ про спалах хвороби.</li>
       <li>Фотографія на картці «Сигнал» не від AP і не входила до пакета джерел VIGIL. На ній табір людей, які увійшли до Сеути наприкінці липня 2026 року; знімок зроблено 2 вересня 2026 року: «Final playa de Benítez», автор Xemenendura, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Final_playa_de_Ben%C3%ADtez.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, кадровано.</li>
       <li>Маленькі рисунки на інших картках — схеми, зроблені для цього аркуша.</li>
+      <li>Картка «З пам’яті» спирається на два записи того ж дня. Перший — відгук людини на роботу про спалах хвороби в ДР Конго: «Задум не зчитався: паперова форма й руйнування шарів не дають зрозуміти зв’язок між епідемією, голодом та недофінансованою гуманітарною відповіддю». Другий — метод із роботи про кібератаку на систему водопостачання: знайомий предмет, одна неможлива дія, а зв’язок видно без заголовка.</li>
       <li>У цьому епізоді читання, задум і запит створено за один прохід. Окремими ролями з власними записами вони стали у версії v6.6.</li>
       <li>Оцінка критика дорадча й не замінює вердикту людини. На картках слова людини подано стисло. Повний вердикт: «Дуже круте рішення; вдалий приклад ідеї, форми та задуму. Сходи перетворюють перетин на повернення одним зрозумілим просторовим жестом».</li>
       <li>Постери — синтетичні зображення, а не документальні фотографії. © Євген Санніков.</li>
@@ -668,7 +673,7 @@ const ASSETS = {"aiact": "data:image/webp;base64,UklGRjAxAABXRUJQVlA4ICQxAACw+AC
     hop('wA2', { from: 'o2', to: 'o3', fx: 660, cur: 's2', mid: s => s.on.add('s2'),
       text: 'Читач світу визначає, що можна стверджувати, і ставить межу: зображення буде символічним і не показуватиме нічийого задокументованого маршруту.' }),
     hop('wRec', { from: 'o9', to: 'o3', at: .58, fx: 640, cur: 's0', mid: s => s.on.add('s0'),
-      text: 'Перш ніж задум закріплено, пам’ять дає Художньому модулю уроки з попередніх зображень, які вже пройшли оцінку. Це лише поради: пам’ять не може заблокувати задум.' }),
+      text: 'Перш ніж задум закріплено, пам’ять передає Художньому модулю висновки з попередніх робіт, які вже оцінила людина. Це лише поради: заборонити задум пам’ять не може.' }),
     hop('wA3', { from: 'o3', to: 'o4', fx: 1025, cur: 's3', mid: s => { s.on.add('s3'); s.v3 = 1; },
       text: 'Перший задум Художнього модуля: відкриті ворота з конвеєром, який везе людей назад.' }),
     hop('wA4', { from: 'o4', to: 'o5', fx: 1390, cur: 's4', mid: s => { s.on.add('s4'); s.v4 = 1; },
