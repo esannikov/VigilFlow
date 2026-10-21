@@ -1,0 +1,10 @@
+Third-party image in this folder
+
+ceuta.webp
+  Source: "Final playa de Benítez.jpg" by Xemenendura, 2 September 2026
+  https://commons.wikimedia.org/wiki/File:Final_playa_de_Ben%C3%ADtez.jpg
+  Licence: CC BY-SA 4.0  https://creativecommons.org/licenses/by-sa/4.0/
+  Change: cropped to a 504 x 228 banner from the 960 px preview and converted to WebP.
+  The crop is shared under the same licence.
+
+All other images are VIGIL works (c) Eugene Sannikov.
